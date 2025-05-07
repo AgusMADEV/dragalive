@@ -206,7 +206,7 @@ function generateId() {
 /**
  * Start the HTTPS server
  */
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`HTTPS/WebSocket server listening on https://localhost:${PORT}`);
   console.log('Press CTRL+C to stop.');
 });
