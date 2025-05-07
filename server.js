@@ -42,7 +42,8 @@ const sslOptions = {
 /**
  * We'll listen on port 3000, so the URL is https://jocarsa.com:3000
  */
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';  // escucha en todas las interfaces
 
 // In-memory store for Teacher + Students
 let teacherClient = null; // { ws, id, name, role: 'teacher' }
@@ -255,7 +256,7 @@ function generateId() {
 /**
  * Start listening
  */
-server.listen(PORT, () => {
-  console.log(`HTTPS + WebSocket server on https://evo-luciona.es:${PORT}`);
-  console.log('Press CTRL+C to stop.');
+server.listen(PORT, HOST, () => {
+    console.log(`Servidor HTTPS+WSS escuchando en https://${HOST}:${PORT}`);
+    console.log('Press CTRL+C to stop.');
 });
