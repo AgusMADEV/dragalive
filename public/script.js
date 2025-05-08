@@ -4,7 +4,7 @@
  * now with an attendants list and a fullscreen toggle.
  ********************************************************/
 const wsProtocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
-const wsUrl = wsProtocol + window.location.host; 
+const wsUrl = wsProtocol + window.location.hostname + ':3000';
 // e.g., wss://jocarsa.com:3000
 const ws = new WebSocket(wsUrl);
 
